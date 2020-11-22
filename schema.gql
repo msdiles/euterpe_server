@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Word {
+  id: String!
+  title: String!
+  meaning: String!
+}
+
+type Query {
+  words: [Word!]!
+  word(id: String!): Word!
+}
+
+type Mutation {
+  deleteWord(id: String!): String!
+  changeWord(meaning: String!, title: String!, id: String!): Word!
+  createWord(meaning: String!, title: String!): Word!
+}

@@ -28,7 +28,7 @@ export class WordService {
     return id
   }
 
-  change(id: string, newWord: CreateWord): Word {
+  change(id: string, newWord: Word): Word {
     return { id, ...newWord }
   }
 }

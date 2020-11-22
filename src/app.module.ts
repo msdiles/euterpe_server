@@ -1,10 +1,14 @@
-import { Module } from '@nestjs/common';
-import { WordController } from './controllers/words.controller';
-import { WordService } from './services/words.service';
+import { WordsModule } from './words/words.module';
+import { Module } from '@nestjs/common'
+import { GraphQLModule } from '@nestjs/graphql'
 
 @Module({
-  imports: [],
-  controllers: [WordController],
-  providers: [WordService],
+  imports: [
+    WordsModule,
+    GraphQLModule.forRoot({
+      autoSchemaFile: 'schema.gql',
+      playground:true
+    }),
+  ],
 })
 export class AppModule {}
